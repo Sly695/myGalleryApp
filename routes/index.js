@@ -41,9 +41,10 @@ router.post('/addPicture', async function (req, res, next) {
 
   var userSaved = await user.save();
 
-  fs.unlinkSync(imagePath);
+  
 
   if (userSaved) {
+    fs.unlinkSync(imagePath);
     res.json({ data: userSaved, result: true });
   } else {
     res.json({ result: false })
