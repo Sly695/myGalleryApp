@@ -1,0 +1,456 @@
+Script started on Tue Mar 15 22:43:18 2022
+[1m[7m%[27m[1m[0m                                                                                  [0m[27m[24m[Jsly@S7Y-001 myphotosgallery % [K[?2004ha nnpm stat[?2004l
+
+Usage: npm <command>
+
+where <command> is one of:
+    access, adduser, audit, bin, bugs, c, cache, ci, cit,
+    clean-install, clean-install-test, completion, config,
+    create, ddp, dedupe, deprecate, dist-tag, docs, doctor,
+    edit, explore, fund, get, help, help-search, hook, i, init,
+    install, install-ci-test, install-test, it, link, list, ln,
+    login, logout, ls, org, outdated, owner, pack, ping, prefix,
+    profile, prune, publish, rb, rebuild, repo, restart, root,
+    run, run-script, s, se, search, set, shrinkwrap, star,
+    stars, start, stop, t, team, test, token, tst, un,
+    uninstall, unpublish, unstar, up, update, v, version, view,
+    whoami
+
+npm <command> -h  quick help on <command>
+npm -l            display full usage info
+npm help <term>   search for help on <term>
+npm help npm      involved overview
+
+Specify configs in the ini-formatted file:
+    /Users/sly/.npmrc
+or on the command line via: npm <command> --key value
+Config info can be viewed via: npm help config
+
+npm@6.14.15 /usr/local/lib/node_modules/npm
+
+Did you mean one of these?
+    star
+    start
+    set
+[1m[7m%[27m[1m[0m                                                                                  [0m[27m[24m[Jsly@S7Y-001 myphotosgallery % [K[?2004hnnpm start[?2004l
+
+> myphotosgallery@0.1.0 start /Users/sly/Documents/Projets/myphotosgallerybackend/myphotosgallery
+> react-scripts start
+
+[2J[3J[H[?25l[2K[1G[36m?[39m [1m[33mSomething is already running on port 3000. Probably:[39m
+[33m  [36mnode ./bin/www[39m[33m[90m (pid 10322)[39m[33m[39m
+[33m[90m[39m[33m[34m  in [39m[33m[36m/Users/sly/Documents/Projets/myphotosgallerybackend[39m[33m[39m
+
+Would you like to run the app on another port instead?[22m [90m›[39m [90m(Y/n)[39m[2K[1A[2K[1A[2K[1A[2K[1A[2K[G[2K[1G[32m✔[39m [1m[33mSomething is already running on port 3000. Probably:[39m
+[33m  [36mnode ./bin/www[39m[33m[90m (pid 10322)[39m[33m[39m
+[33m[90m[39m[33m[34m  in [39m[33m[36m/Users/sly/Documents/Projets/myphotosgallerybackend[39m[33m[39m
+
+Would you like to run the app on another port instead?[22m [90m…[39m yes
+[?25h(node:10424) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:10424) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[2J[3J[H[36mStarting the development server...[39m
+[36m[39m
+[2J[3J[H[31mFailed to compile.[39m
+[31m[39m
+Module not found: Error: Can't resolve './App.css' in '/Users/sly/Documents/Projets/myphotosgallerybackend/myphotosgallery/src'
+assets by path [1m[32mstatic/[39m[22m 6.78 MiB
+  assets by path [1m[32mstatic/media/*.svg[39m[22m 21 KiB
+    asset [1m[32mstatic/media/posting_photo.dc6178e97b2fc4cbafe82c8239cc9784.svg[39m[22m 8.56 KiB [1m[32m[emitted][39m[22m (auxiliary name: main)
+    asset [1m[32mstatic/media/photo_session.029a7a111459fe1138ec856758e44683.svg[39m[22m 6.2 KiB [1m[32m[emitted][39m[22m (auxiliary name: main)
+    asset [1m[32mstatic/media/livephoto.0ada30527bb6d4bbb2f2badcfe3504ba.svg[39m[22m 6.19 KiB [1m[32m[emitted][39m[22m (auxiliary name: main)
+  assets by path [1m[32mstatic/js/*.js[39m[22m 6.75 MiB
+    asset [1m[32mstatic/js/bundle.js[39m[22m 6.75 MiB [1m[32m[emitted][39m[22m (name: main) 1 related asset
+    asset [1m[32mstatic/js/node_modules_web-vitals_dist_web-vitals_js.chunk.js[39m[22m 6.94 KiB [1m[32m[emitted][39m[22m 1 related asset
+asset [1m[32mindex.html[39m[22m 1.78 KiB [1m[32m[emitted][39m[22m
+asset [1m[32masset-manifest.json[39m[22m 768 bytes [1m[32m[emitted][39m[22m
+orphan modules 2.97 MiB [1m[33m[orphan][39m[22m 1980 modules
+runtime modules 31.5 KiB 16 modules
+cacheable modules 5.89 MiB
+  modules by path [1m./node_modules/[39m[22m 5.79 MiB 602 modules
+  modules by path [1m./src/[39m[22m 102 KiB
+    modules by path [1m./src/Components/[39m[22m 38.4 KiB 5 modules
+    modules by path [1m./src/*.js[39m[22m 6.35 KiB 3 modules
+    modules by path [1m./src/Screens/[39m[22m 18 KiB 3 modules
+    modules by path [1m./src/Reducers/*.js[39m[22m 3.87 KiB 3 modules
+    modules by path [1m./src/images/*.svg[39m[22m 31.6 KiB 3 modules
+    modules by path [1m./src/*.css[39m[22m 4.1 KiB
+      [1m./src/index.css[39m[22m 2.72 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+      ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js![1m./src/index.css[39m[22m 1.37 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1mdata:image/svg+xml;base64,PHN2ZyB3aWR0aD0i..[39m[22m 658 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+
+[1m[33mWARNING[39m[22m in [1m./node_modules/antd/dist/antd.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./node_modules/antd/dist/antd.css)
+[1mModule Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map: 'webpack://antd/./components/config-provider/style/index.less' URL is [1m[31mnot supported[39m[22m[1m[39m[22m
+ @ ./node_modules/antd/dist/antd.css 8:6-231 22:17-24 26:7-21 58:25-39 59:36-47 59:50-64 63:6-73:7 64:54-65 64:68-82 70:42-53 70:56-70 72:21-28 83:0-201 83:0-201 84:22-29 84:33-47 84:50-64 61:4-74:5
+ @ ./src/Components/Gallery/index.js 15:0-28
+ @ ./src/Screens/GalleryScreen/galleryScreen.js 5:0-48 18:35-43
+ @ ./src/App.js 7:0-66 42:40-53
+ @ ./src/index.js 7:0-24 11:33-36
+
+[1m[33mWARNING[39m[22m in [1m./node_modules/antd/dist/antd.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./node_modules/antd/dist/antd.css)
+[1mModule Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map: 'webpack://antd/./components/icon/style/index.less' URL is [1m[31mnot supported[39m[22m[1m[39m[22m
+ @ ./node_modules/antd/dist/antd.css 8:6-231 22:17-24 26:7-21 58:25-39 59:36-47 59:50-64 63:6-73:7 64:54-65 64:68-82 70:42-53 70:56-70 72:21-28 83:0-201 83:0-201 84:22-29 84:33-47 84:50-64 61:4-74:5
+ @ ./src/Components/Gallery/index.js 15:0-28
+ @ ./src/Screens/GalleryScreen/galleryScreen.js 5:0-48 18:35-43
+ @ ./src/App.js 7:0-66 42:40-53
+ @ ./src/index.js 7:0-24 11:33-36
+
+[1m[33mWARNING[39m[22m in [1m./node_modules/antd/dist/antd.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./node_modules/antd/dist/antd.css)
+[1mModule Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map: 'webpack://antd/./components/locale-provider/style/index.less' URL is [1m[31mnot supported[39m[22m[1m[39m[22m
+ @ ./node_modules/antd/dist/antd.css 8:6-231 22:17-24 26:7-21 58:25-39 59:36-47 59:50-64 63:6-73:7 64:54-65 64:68-82 70:42-53 70:56-70 72:21-28 83:0-201 83:0-201 84:22-29 84:33-47 84:50-64 61:4-74:5
+ @ ./src/Components/Gallery/index.js 15:0-28
+ @ ./src/Screens/GalleryScreen/galleryScreen.js 5:0-48 18:35-43
+ @ ./src/App.js 7:0-66 42:40-53
+ @ ./src/index.js 7:0-24 11:33-36
+
+[1m[33mWARNING[39m[22m in [1m./node_modules/antd/dist/antd.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./node_modules/antd/dist/antd.css)
+[1mModule Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map: 'webpack://antd/./components/time-picker/style/index.less' URL is [1m[31mnot supported[39m[22m[1m[39m[22m
+ @ ./node_modules/antd/dist/antd.css 8:6-231 22:17-24 26:7-21 58:25-39 59:36-47 59:50-64 63:6-73:7 64:54-65 64:68-82 70:42-53 70:56-70 72:21-28 83:0-201 83:0-201 84:22-29 84:33-47 84:50-64 61:4-74:5
+ @ ./src/Components/Gallery/index.js 15:0-28
+ @ ./src/Screens/GalleryScreen/galleryScreen.js 5:0-48 18:35-43
+ @ ./src/App.js 7:0-66 42:40-53
+ @ ./src/index.js 7:0-24 11:33-36
+
+[1m[33mWARNING[39m[22m in src/App.js
+  [1mLine 1:17:[22m  'useEffect' is defined but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 1:28:[22m  'useState' is defined but never used   [33m[4mno-unused-vars[24m[39m
+
+src/Components/ButtonElement.js
+  [1mLine 2:10:[22m  'Link' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+src/Components/Gallery/index.js
+  [1mLine 40:8:[22m   'img' is defined but never used                                                                                  [33m[4mno-unused-vars[24m[39m
+  [1mLine 55:13:[22m  'Meta' is assigned a value but never used                                                                        [33m[4mno-unused-vars[24m[39m
+  [1mLine 69:11:[22m  'showModal' is assigned a value but never used                                                                   [33m[4mno-unused-vars[24m[39m
+  [1mLine 106:8:[22m  React Hook useEffect has a missing dependency: 'avatarChoose'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+src/Components/Navbar/index.js
+  [1mLine 10:5:[22m   'SpanNav' is defined but never used                                                                              [33m[4mno-unused-vars[24m[39m
+  [1mLine 16:5:[22m   'ModalLogo' is defined but never used                                                                            [33m[4mno-unused-vars[24m[39m
+  [1mLine 36:21:[22m  'setCurrrent' is assigned a value but never used                                                                 [33m[4mno-unused-vars[24m[39m
+  [1mLine 57:11:[22m  'deleteAll' is assigned a value but never used                                                                   [33m[4mno-unused-vars[24m[39m
+  [1mLine 65:8:[22m   React Hook useEffect has a missing dependency: 'avatarChoose'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+src/Reducers/email.js
+  [1mLine 1:1:[22m  Unexpected default export of anonymous function  [33m[4mimport/no-anonymous-default-export[24m[39m
+
+src/Reducers/token.js
+  [1mLine 1:1:[22m  Unexpected default export of anonymous function  [33m[4mimport/no-anonymous-default-export[24m[39m
+
+src/Reducers/username.js
+  [1mLine 1:1:[22m  Unexpected default export of anonymous function  [33m[4mimport/no-anonymous-default-export[24m[39m
+
+src/Screens/GalleryScreen/galleryScreen.js
+  [1mLine 4:10:[22m  'persistStore' is defined but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 5:10:[22m  'PersistGate' is defined but never used   [33m[4mno-unused-vars[24m[39m
+
+4 warnings have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+[1m[31mERROR[39m[22m in [1m./src/App.js[39m[22m [1m[32m6:0-19[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './App.css' in '/Users/sly/Documents/Projets/myphotosgallerybackend/myphotosgallery/src'[39m[22m
+resolve './App.css' in '/Users/sly/Documents/Projets/myphotosgallerybackend/myphotosgallery/src'
+  using description file: /Users/sly/Documents/Projets/myphotosgallerybackend/myphotosgallery/package.json (relative path: ./src)
+    Field 'browser' doesn't contain a valid alias configuration
+    using description file: /Users/sly/Documents/Projets/myphotosgallerybackend/myphotosgallery/package.json (relative path: ./src/App.css)
+      no extension
+        Field 'browser' doesn't contain a valid alias configuration
+[1m[31m        /Users/sly/Documents/Projets/myphotosgallerybackend/myphotosgallery/src/App.css doesn't exist[39m[22m
+      .web.mjs
+        Field 'browser' doesn't contain a valid alias configuration
+[1m[31m        /Users/sly/Documents/Projets/myphotosgallerybackend/myphotosgallery/src/App.css.web.mjs doesn't exist[39m[22m
+      .mjs
+        Field 'browser' doesn't contain a valid alias configuration
+[1m[31m        /Users/sly/Documents/Projets/myphotosgallerybackend/myphotosgallery/src/App.css.mjs doesn't exist[39m[22m
+      .web.js
+        Field 'browser' doesn't contain a valid alias configuration
+[1m[31m        /Users/sly/Documents/Projets/myphotosgallerybackend/myphotosgallery/src/App.css.web.js doesn't exist[39m[22m
+      .js
+        Field 'browser' doesn't contain a valid alias configuration
+[1m[31m        /Users/sly/Documents/Projets/myphotosgallerybackend/myphotosgallery/src/App.css.js doesn't exist[39m[22m
+      .json
+        Field 'browser' doesn't contain a valid alias configuration
+[1m[31m        /Users/sly/Documents/Projets/myphotosgallerybackend/myphotosgallery/src/App.css.json doesn't exist[39m[22m
+      .web.jsx
+        Field 'browser' doesn't contain a valid alias configuration
+[1m[31m        /Users/sly/Documents/Projets/myphotosgallerybackend/myphotosgallery/src/App.css.web.jsx doesn't exist[39m[22m
+      .jsx
+        Field 'browser' doesn't contain a valid alias configuration
+[1m[31m        /Users/sly/Documents/Projets/myphotosgallerybackend/myphotosgallery/src/App.css.jsx doesn't exist[39m[22m
+      as directory
+[1m[31m        /Users/sly/Documents/Projets/myphotosgallerybackend/myphotosgallery/src/App.css doesn't exist[39m[22m
+ @ ./src/index.js 7:0-24 11:33-36
+
+webpack 5.68.0 compiled with [1m[31m1 error[39m[22m and [1m[33m5 warnings[39m[22m in 14850 ms
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+Failed to parse source map: 'webpack://antd/./components/config-provider/style/index.less' URL is not supported
+
+Failed to parse source map: 'webpack://antd/./components/icon/style/index.less' URL is not supported
+
+Failed to parse source map: 'webpack://antd/./components/locale-provider/style/index.less' URL is not supported
+
+Failed to parse source map: 'webpack://antd/./components/time-picker/style/index.less' URL is not supported
+
+src/App.js
+  [1mLine 1:17:[22m  'useEffect' is defined but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 1:28:[22m  'useState' is defined but never used   [33m[4mno-unused-vars[24m[39m
+
+src/Components/ButtonElement.js
+  [1mLine 2:10:[22m  'Link' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+src/Components/Gallery/index.js
+  [1mLine 40:8:[22m   'img' is defined but never used                                                                                  [33m[4mno-unused-vars[24m[39m
+  [1mLine 55:13:[22m  'Meta' is assigned a value but never used                                                                        [33m[4mno-unused-vars[24m[39m
+  [1mLine 69:11:[22m  'showModal' is assigned a value but never used                                                                   [33m[4mno-unused-vars[24m[39m
+  [1mLine 106:8:[22m  React Hook useEffect has a missing dependency: 'avatarChoose'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+src/Components/Navbar/index.js
+  [1mLine 10:5:[22m   'SpanNav' is defined but never used                                                                              [33m[4mno-unused-vars[24m[39m
+  [1mLine 16:5:[22m   'ModalLogo' is defined but never used                                                                            [33m[4mno-unused-vars[24m[39m
+  [1mLine 36:21:[22m  'setCurrrent' is assigned a value but never used                                                                 [33m[4mno-unused-vars[24m[39m
+  [1mLine 57:11:[22m  'deleteAll' is assigned a value but never used                                                                   [33m[4mno-unused-vars[24m[39m
+  [1mLine 65:8:[22m   React Hook useEffect has a missing dependency: 'avatarChoose'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+src/Reducers/email.js
+  [1mLine 1:1:[22m  Unexpected default export of anonymous function  [33m[4mimport/no-anonymous-default-export[24m[39m
+
+src/Reducers/token.js
+  [1mLine 1:1:[22m  Unexpected default export of anonymous function  [33m[4mimport/no-anonymous-default-export[24m[39m
+
+src/Reducers/username.js
+  [1mLine 1:1:[22m  Unexpected default export of anonymous function  [33m[4mimport/no-anonymous-default-export[24m[39m
+
+src/Screens/GalleryScreen/galleryScreen.js
+  [1mLine 4:10:[22m  'persistStore' is defined but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 5:10:[22m  'PersistGate' is defined but never used   [33m[4mno-unused-vars[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+assets by status 27.9 KiB [1m[32m[cached][39m[22m 4 assets
+assets by status 11.1 MiB [1m[32m[emitted][39m[22m
+  assets by chunk 11.1 MiB (name: main)
+    asset [1m[32mstatic/js/bundle.js[39m[22m 8.93 MiB [1m[32m[emitted][39m[22m (name: main) 1 related asset
+    asset [1m[32mmain.4a976afb5023b1b286f5.hot-update.js[39m[22m 2.18 MiB [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[hmr][39m[22m (name: main) 1 related asset
+  assets by path [1m[32m*.json[39m[22m 921 bytes
+    asset [1m[32masset-manifest.json[39m[22m 893 bytes [1m[32m[emitted][39m[22m
+    asset [1m[32mmain.4a976afb5023b1b286f5.hot-update.json[39m[22m 28 bytes [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[hmr][39m[22m
+  asset [1m[32mindex.html[39m[22m 1.78 KiB [1m[32m[emitted][39m[22m
+Entrypoint [1mmain[39m[22m 11.1 MiB (11 MiB) = [1m[32mstatic/js/bundle.js[39m[22m 8.93 MiB [1m[32mmain.4a976afb5023b1b286f5.hot-update.js[39m[22m 2.18 MiB 5 auxiliary assets
+cached modules 8.85 MiB [1m[32m[cached][39m[22m 2601 modules
+runtime modules 31.5 KiB 16 modules
+javascript modules 2.17 MiB
+  modules by path [1m./src/*.css[39m[22m 5.05 KiB
+    [1m./src/App.css[39m[22m 2.72 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+    ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js![1m./src/App.css[39m[22m 2.34 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1m./src/App.js[39m[22m 3.08 KiB [1m[33m[code generated][39m[22m
+  ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]![1m./node_modules/antd/dist/antd.css[39m[22m 2.16 MiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+
+[1m[33mWARNING[39m[22m in [1m./node_modules/antd/dist/antd.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./node_modules/antd/dist/antd.css)
+[1mModule Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map: 'webpack://antd/./components/config-provider/style/index.less' URL is [1m[31mnot supported[39m[22m[1m[39m[22m
+ @ ./node_modules/antd/dist/antd.css 8:6-231 22:17-24 26:7-21 58:25-39 59:36-47 59:50-64 61:4-74:5 63:6-73:7 64:54-65 64:68-82 70:42-53 70:56-70 72:21-28 83:0-201 83:0-201 84:22-29 84:33-47 84:50-64
+ @ ./src/Components/Gallery/index.js 15:0-28
+ @ ./src/Screens/GalleryScreen/galleryScreen.js 5:0-48 18:35-43
+ @ ./src/App.js 7:0-66 42:40-53
+ @ ./src/index.js 7:0-24 11:33-36
+
+[1m[33mWARNING[39m[22m in [1m./node_modules/antd/dist/antd.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./node_modules/antd/dist/antd.css)
+[1mModule Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map: 'webpack://antd/./components/icon/style/index.less' URL is [1m[31mnot supported[39m[22m[1m[39m[22m
+ @ ./node_modules/antd/dist/antd.css 8:6-231 22:17-24 26:7-21 58:25-39 59:36-47 59:50-64 61:4-74:5 63:6-73:7 64:54-65 64:68-82 70:42-53 70:56-70 72:21-28 83:0-201 83:0-201 84:22-29 84:33-47 84:50-64
+ @ ./src/Components/Gallery/index.js 15:0-28
+ @ ./src/Screens/GalleryScreen/galleryScreen.js 5:0-48 18:35-43
+ @ ./src/App.js 7:0-66 42:40-53
+ @ ./src/index.js 7:0-24 11:33-36
+
+[1m[33mWARNING[39m[22m in [1m./node_modules/antd/dist/antd.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./node_modules/antd/dist/antd.css)
+[1mModule Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map: 'webpack://antd/./components/locale-provider/style/index.less' URL is [1m[31mnot supported[39m[22m[1m[39m[22m
+ @ ./node_modules/antd/dist/antd.css 8:6-231 22:17-24 26:7-21 58:25-39 59:36-47 59:50-64 61:4-74:5 63:6-73:7 64:54-65 64:68-82 70:42-53 70:56-70 72:21-28 83:0-201 83:0-201 84:22-29 84:33-47 84:50-64
+ @ ./src/Components/Gallery/index.js 15:0-28
+ @ ./src/Screens/GalleryScreen/galleryScreen.js 5:0-48 18:35-43
+ @ ./src/App.js 7:0-66 42:40-53
+ @ ./src/index.js 7:0-24 11:33-36
+
+[1m[33mWARNING[39m[22m in [1m./node_modules/antd/dist/antd.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./node_modules/antd/dist/antd.css)
+[1mModule Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map: 'webpack://antd/./components/time-picker/style/index.less' URL is [1m[31mnot supported[39m[22m[1m[39m[22m
+ @ ./node_modules/antd/dist/antd.css 8:6-231 22:17-24 26:7-21 58:25-39 59:36-47 59:50-64 61:4-74:5 63:6-73:7 64:54-65 64:68-82 70:42-53 70:56-70 72:21-28 83:0-201 83:0-201 84:22-29 84:33-47 84:50-64
+ @ ./src/Components/Gallery/index.js 15:0-28
+ @ ./src/Screens/GalleryScreen/galleryScreen.js 5:0-48 18:35-43
+ @ ./src/App.js 7:0-66 42:40-53
+ @ ./src/index.js 7:0-24 11:33-36
+
+[1m[33mWARNING[39m[22m in src/App.js
+  [1mLine 1:17:[22m  'useEffect' is defined but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 1:28:[22m  'useState' is defined but never used   [33m[4mno-unused-vars[24m[39m
+
+src/Components/ButtonElement.js
+  [1mLine 2:10:[22m  'Link' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+src/Components/Gallery/index.js
+  [1mLine 40:8:[22m   'img' is defined but never used                                                                                  [33m[4mno-unused-vars[24m[39m
+  [1mLine 55:13:[22m  'Meta' is assigned a value but never used                                                                        [33m[4mno-unused-vars[24m[39m
+  [1mLine 69:11:[22m  'showModal' is assigned a value but never used                                                                   [33m[4mno-unused-vars[24m[39m
+  [1mLine 106:8:[22m  React Hook useEffect has a missing dependency: 'avatarChoose'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+src/Components/Navbar/index.js
+  [1mLine 10:5:[22m   'SpanNav' is defined but never used                                                                              [33m[4mno-unused-vars[24m[39m
+  [1mLine 16:5:[22m   'ModalLogo' is defined but never used                                                                            [33m[4mno-unused-vars[24m[39m
+  [1mLine 36:21:[22m  'setCurrrent' is assigned a value but never used                                                                 [33m[4mno-unused-vars[24m[39m
+  [1mLine 57:11:[22m  'deleteAll' is assigned a value but never used                                                                   [33m[4mno-unused-vars[24m[39m
+  [1mLine 65:8:[22m   React Hook useEffect has a missing dependency: 'avatarChoose'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+src/Reducers/email.js
+  [1mLine 1:1:[22m  Unexpected default export of anonymous function  [33m[4mimport/no-anonymous-default-export[24m[39m
+
+src/Reducers/token.js
+  [1mLine 1:1:[22m  Unexpected default export of anonymous function  [33m[4mimport/no-anonymous-default-export[24m[39m
+
+src/Reducers/username.js
+  [1mLine 1:1:[22m  Unexpected default export of anonymous function  [33m[4mimport/no-anonymous-default-export[24m[39m
+
+src/Screens/GalleryScreen/galleryScreen.js
+  [1mLine 4:10:[22m  'persistStore' is defined but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 5:10:[22m  'PersistGate' is defined but never used   [33m[4mno-unused-vars[24m[39m
+
+4 warnings have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.68.0 compiled with [1m[33m5 warnings[39m[22m in 2006 ms
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.[39m
+[33m[39m
+Failed to parse source map: 'webpack://antd/./components/config-provider/style/index.less' URL is not supported
+
+Failed to parse source map: 'webpack://antd/./components/icon/style/index.less' URL is not supported
+
+Failed to parse source map: 'webpack://antd/./components/locale-provider/style/index.less' URL is not supported
+
+Failed to parse source map: 'webpack://antd/./components/time-picker/style/index.less' URL is not supported
+
+src/App.js
+  [1mLine 1:17:[22m  'useEffect' is defined but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 1:28:[22m  'useState' is defined but never used   [33m[4mno-unused-vars[24m[39m
+
+src/Components/ButtonElement.js
+  [1mLine 2:10:[22m  'Link' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+src/Components/Gallery/index.js
+  [1mLine 40:8:[22m   'img' is defined but never used                                                                                  [33m[4mno-unused-vars[24m[39m
+  [1mLine 55:13:[22m  'Meta' is assigned a value but never used                                                                        [33m[4mno-unused-vars[24m[39m
+  [1mLine 69:11:[22m  'showModal' is assigned a value but never used                                                                   [33m[4mno-unused-vars[24m[39m
+  [1mLine 106:8:[22m  React Hook useEffect has a missing dependency: 'avatarChoose'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+src/Components/Navbar/index.js
+  [1mLine 10:5:[22m   'SpanNav' is defined but never used                                                                              [33m[4mno-unused-vars[24m[39m
+  [1mLine 16:5:[22m   'ModalLogo' is defined but never used                                                                            [33m[4mno-unused-vars[24m[39m
+  [1mLine 36:21:[22m  'setCurrrent' is assigned a value but never used                                                                 [33m[4mno-unused-vars[24m[39m
+  [1mLine 57:11:[22m  'deleteAll' is assigned a value but never used                                                                   [33m[4mno-unused-vars[24m[39m
+  [1mLine 65:8:[22m   React Hook useEffect has a missing dependency: 'avatarChoose'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+src/Reducers/email.js
+  [1mLine 1:1:[22m  Unexpected default export of anonymous function  [33m[4mimport/no-anonymous-default-export[24m[39m
+
+src/Reducers/token.js
+  [1mLine 1:1:[22m  Unexpected default export of anonymous function  [33m[4mimport/no-anonymous-default-export[24m[39m
+
+src/Reducers/username.js
+  [1mLine 1:1:[22m  Unexpected default export of anonymous function  [33m[4mimport/no-anonymous-default-export[24m[39m
+
+src/Screens/GalleryScreen/galleryScreen.js
+  [1mLine 4:10:[22m  'persistStore' is defined but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 5:10:[22m  'PersistGate' is defined but never used   [33m[4mno-unused-vars[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+assets by status 8.95 MiB [1m[32m[cached][39m[22m 5 assets
+assets by path [1m[32m.[39m[22m 2.53 KiB
+  asset [1m[32mindex.html[39m[22m 1.78 KiB [1m[32m[emitted][39m[22m
+  asset [1m[32masset-manifest.json[39m[22m 768 bytes [1m[32m[emitted][39m[22m
+cached modules 11 MiB (javascript) 31.5 KiB (runtime) [1m[32m[cached][39m[22m 2620 modules
+./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js![1m./src/App.css[39m[22m 2.34 KiB [1m[33m[built][39m[22m
+
+[1m[33mWARNING[39m[22m in [1m./node_modules/antd/dist/antd.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./node_modules/antd/dist/antd.css)
+[1mModule Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map: 'webpack://antd/./components/config-provider/style/index.less' URL is [1m[31mnot supported[39m[22m[1m[39m[22m
+ @ ./node_modules/antd/dist/antd.css 8:6-231 22:17-24 26:7-21 58:25-39 59:36-47 59:50-64 61:4-74:5 63:6-73:7 64:54-65 64:68-82 70:42-53 70:56-70 72:21-28 83:0-201 83:0-201 84:22-29 84:33-47 84:50-64
+ @ ./src/Components/Gallery/index.js 15:0-28
+ @ ./src/Screens/GalleryScreen/galleryScreen.js 5:0-48 18:35-43
+ @ ./src/App.js 7:0-66 42:40-53
+ @ ./src/index.js 7:0-24 11:33-36
+
+[1m[33mWARNING[39m[22m in [1m./node_modules/antd/dist/antd.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./node_modules/antd/dist/antd.css)
+[1mModule Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map: 'webpack://antd/./components/icon/style/index.less' URL is [1m[31mnot supported[39m[22m[1m[39m[22m
+ @ ./node_modules/antd/dist/antd.css 8:6-231 22:17-24 26:7-21 58:25-39 59:36-47 59:50-64 61:4-74:5 63:6-73:7 64:54-65 64:68-82 70:42-53 70:56-70 72:21-28 83:0-201 83:0-201 84:22-29 84:33-47 84:50-64
+ @ ./src/Components/Gallery/index.js 15:0-28
+ @ ./src/Screens/GalleryScreen/galleryScreen.js 5:0-48 18:35-43
+ @ ./src/App.js 7:0-66 42:40-53
+ @ ./src/index.js 7:0-24 11:33-36
+
+[1m[33mWARNING[39m[22m in [1m./node_modules/antd/dist/antd.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./node_modules/antd/dist/antd.css)
+[1mModule Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map: 'webpack://antd/./components/locale-provider/style/index.less' URL is [1m[31mnot supported[39m[22m[1m[39m[22m
+ @ ./node_modules/antd/dist/antd.css 8:6-231 22:17-24 26:7-21 58:25-39 59:36-47 59:50-64 61:4-74:5 63:6-73:7 64:54-65 64:68-82 70:42-53 70:56-70 72:21-28 83:0-201 83:0-201 84:22-29 84:33-47 84:50-64
+ @ ./src/Components/Gallery/index.js 15:0-28
+ @ ./src/Screens/GalleryScreen/galleryScreen.js 5:0-48 18:35-43
+ @ ./src/App.js 7:0-66 42:40-53
+ @ ./src/index.js 7:0-24 11:33-36
+
+[1m[33mWARNING[39m[22m in [1m./node_modules/antd/dist/antd.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./node_modules/antd/dist/antd.css)
+[1mModule Warning (from ./node_modules/source-map-loader/dist/cjs.js):
+[1m[31mFailed[39m[22m[1m to parse source map: 'webpack://antd/./components/time-picker/style/index.less' URL is [1m[31mnot supported[39m[22m[1m[39m[22m
+ @ ./node_modules/antd/dist/antd.css 8:6-231 22:17-24 26:7-21 58:25-39 59:36-47 59:50-64 61:4-74:5 63:6-73:7 64:54-65 64:68-82 70:42-53 70:56-70 72:21-28 83:0-201 83:0-201 84:22-29 84:33-47 84:50-64
+ @ ./src/Components/Gallery/index.js 15:0-28
+ @ ./src/Screens/GalleryScreen/galleryScreen.js 5:0-48 18:35-43
+ @ ./src/App.js 7:0-66 42:40-53
+ @ ./src/index.js 7:0-24 11:33-36
+
+[1m[33mWARNING[39m[22m in src/App.js
+  [1mLine 1:17:[22m  'useEffect' is defined but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 1:28:[22m  'useState' is defined but never used   [33m[4mno-unused-vars[24m[39m
+
+src/Components/ButtonElement.js
+  [1mLine 2:10:[22m  'Link' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+src/Components/Gallery/index.js
+  [1mLine 40:8:[22m   'img' is defined but never used                                                                                  [33m[4mno-unused-vars[24m[39m
+  [1mLine 55:13:[22m  'Meta' is assigned a value but never used                                                                        [33m[4mno-unused-vars[24m[39m
+  [1mLine 69:11:[22m  'showModal' is assigned a value but never used                                                                   [33m[4mno-unused-vars[24m[39m
+  [1mLine 106:8:[22m  React Hook useEffect has a missing dependency: 'avatarChoose'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+src/Components/Navbar/index.js
+  [1mLine 10:5:[22m   'SpanNav' is defined but never used                                                                              [33m[4mno-unused-vars[24m[39m
+  [1mLine 16:5:[22m   'ModalLogo' is defined but never used                                                                            [33m[4mno-unused-vars[24m[39m
+  [1mLine 36:21:[22m  'setCurrrent' is assigned a value but never used                                                                 [33m[4mno-unused-vars[24m[39m
+  [1mLine 57:11:[22m  'deleteAll' is assigned a value but never used                                                                   [33m[4mno-unused-vars[24m[39m
+  [1mLine 65:8:[22m   React Hook useEffect has a missing dependency: 'avatarChoose'. Either include it or remove the dependency array  [33m[4mreact-hooks/exhaustive-deps[24m[39m
+
+src/Reducers/email.js
+  [1mLine 1:1:[22m  Unexpected default export of anonymous function  [33m[4mimport/no-anonymous-default-export[24m[39m
+
+src/Reducers/token.js
+  [1mLine 1:1:[22m  Unexpected default export of anonymous function  [33m[4mimport/no-anonymous-default-export[24m[39m
+
+src/Reducers/username.js
+  [1mLine 1:1:[22m  Unexpected default export of anonymous function  [33m[4mimport/no-anonymous-default-export[24m[39m
+
+src/Screens/GalleryScreen/galleryScreen.js
+  [1mLine 4:10:[22m  'persistStore' is defined but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 5:10:[22m  'PersistGate' is defined but never used   [33m[4mno-unused-vars[24m[39m
+
+4 warnings have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+
+webpack 5.68.0 compiled with [1m[33m5 warnings[39m[22m in 227 ms
+^C
+[1m[7m%[27m[1m[0m                                                                                  [0m[27m[24m[Jsly@S7Y-001 myphotosgallery % [K[?2004h
