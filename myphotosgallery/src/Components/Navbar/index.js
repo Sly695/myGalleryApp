@@ -128,7 +128,12 @@ const Navbar = (props) => {
 
         let formData = new FormData();
 
-        formData.append("file", avatarChoosen);
+        if(avatarChoosen === ""){
+            formData.append("file", null);
+        } else {
+            formData.append("file", avatarChoosen);
+        }
+
         formData.append("user", pseudo);
         formData.append("user", email);
         formData.append("user", token);

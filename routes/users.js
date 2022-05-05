@@ -122,10 +122,10 @@ router.post('/deleteUser', async (req, res, next) => {
 
 router.post('/updateUser', async (req, res, next) => {
 
-  var file = await req.files.file;
-  var pseudo = await req.body.user[0]
-  var email = await req.body.user[1]
-  var token = await req.body.user[2]
+  var file = "";
+  var pseudo = await req.body.user[0];
+  var email = await req.body.user[1];
+  var token = await req.body.user[2];
 
 
   const userSaved = await usersModel.findOne({ token : token });
@@ -134,8 +134,10 @@ router.post('/updateUser', async (req, res, next) => {
     pseudo = userSaved.username;
   } else if (email == "") {
     email = userSaved.email;
-  } else if (file == "") {
+  } else if (req.body.file === null) {
     file = userSaved.avatar;
+  } else {
+    file = await req.files.file;
   }
 
   const user = await usersModel.updateOne(
