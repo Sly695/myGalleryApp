@@ -127,14 +127,17 @@ router.post('/updateUser', async (req, res, next) => {
   var email = await req.body.user[1];
   var token = await req.body.user[2];
 
-
   const userSaved = await usersModel.findOne({ token : token });
 
   if (pseudo == "") {
     pseudo = userSaved.username;
-  } else if (email == "") {
+  }
+  
+  if (email == "") {
     email = userSaved.email;
-  } else if (req.body.file === null) {
+  }
+  
+  if(req.body.file) {
     file = userSaved.avatar;
   } else {
     file = await req.files.file;
@@ -157,6 +160,14 @@ router.post('/updateUser', async (req, res, next) => {
     res.json({ result: true, userSaved, req : req.body})
   }
 
+  if(req.body.file === null ){
+
+  }
+
+})
+
+router.post('test', (res, next) => {
+  res.json({result: true})
 })
 
 module.exports = router;

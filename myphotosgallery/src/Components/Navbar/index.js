@@ -129,8 +129,10 @@ const Navbar = (props) => {
         let formData = new FormData();
 
         if(avatarChoosen === ""){
+            console.log("first")
             formData.append("file", null);
         } else {
+            console.log("two")
             formData.append("file", avatarChoosen);
         }
 
@@ -219,7 +221,7 @@ const Navbar = (props) => {
                 centered
                 visible={visibleDelete}
                 onOk={deleteUser}
-                onCancel={() => setVisibleDelete(false)}
+                onCancel={() => setVisibleDelete(false)} 
                 width={500}
             >
                 <p style={{ color: "red" }}>N'ayez crainte vos photos seront supprimées par la même occasion.</p>
