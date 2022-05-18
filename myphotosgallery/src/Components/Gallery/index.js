@@ -60,7 +60,7 @@ const GalleryS = (props) => {
     const [displayGrid, setDisplayGrid] = useState(true);
     const [disabledUpload, setDisabledUpload] = useState(false);
     const [like, setLike] = useState(false);
-    const [user, setUser] = useState()
+    const [photoLikedByUser, setPhotoLikedByUser] = useState([])
     const [likedPictures, setLikedPictures] = useState([]);
     const { Meta } = Card;
 
@@ -83,7 +83,7 @@ const GalleryS = (props) => {
 
     useEffect(() => {
         displayPhotos();
-        displayAvatar()
+        displayAvatar();
 
         return () => setFile()
 
@@ -102,7 +102,7 @@ const GalleryS = (props) => {
         let response = await rawResponse.json();
         if (response.result) {
             setAllPictures(response.allPictures[0].pictures);
-            setUser(response.allPictures)
+            setPhotoLikedByUser(response.allPictures[0].picturesLiked)
             setDisplayLoading(true);
         }
 
@@ -228,16 +228,14 @@ const GalleryS = (props) => {
 
     let pictures = allPictures.map(function (pics, i) {
 
-        // let heart = "";
-        // let idLiked = user[0].picturesLiked.filter(id => id === pics._id.toString());
-        // console.log(idLiked)
-        // idLiked = allPictures.find(id => id.toString() === pics._id)
-        // if (idLiked) {
-        //     heart = <FontAwesomeIcon onClick={() => handleLiked(pics._id)} icon={faHeart} style={{ color: "red", fontSize: "20px", marginRight: "10px", cursor: "pointer" }} />
+        let heart = "";
+        var photoMatched = photoLikedByUser.find(id => id === pics._id.toString())
+        if(photoMatched){
+            heart = <FontAwesomeIcon onClick={() => handleLiked(pics._id)} icon={faHeart} style={{ color: "red", fontSize: "20px", marginRight: "10px", cursor: "pointer" }} />
 
-        // } else {
-        //     heart = <FontAwesomeIcon onClick={() => handleLiked(pics._id)} icon={faHeart} style={{ color: "black", fontSize: "20px", marginRight: "10px", cursor: "pointer" }} />
-        // }
+        } else {
+            heart = <FontAwesomeIcon onClick={() => handleLiked(pics._id)} icon={faHeart} style={{ color: "black", fontSize: "20px", marginRight: "10px", cursor: "pointer" }} />
+        }
 
         const menu = props => (
             <Menu pics="wow" >
@@ -262,7 +260,7 @@ const GalleryS = (props) => {
 
 
             sizeImage = (
-                <div >
+                <div>
                     <Card style={{ width: "400px", }}>
                         <div style={{ display: "flex", flexDirection: "column" }}>
                             <div style={{ display: "flex" }}>
@@ -276,7 +274,8 @@ const GalleryS = (props) => {
                             <FontAwesomeIcon style={{ fontSize: "20px", color: "#01bf71", cursor: "pointer", position: "absolute", top: "425", right: "25" }} icon={faEllipsis} />
                         </Dropdown>
                         <CardLogo style={{ marginLeft: "15px", marginTop: "7px" }}>
-                            <FontAwesomeIcon icon={faComment} style={{ fontSize: "20px" }} />
+                            {heart}
+                            <FontAwesomeIcon icon={faComment} style={{ fontSize: "20px", color: "grey" }} />
                         </CardLogo>
                         {pics.like} likes
                         <PicturesDetails>

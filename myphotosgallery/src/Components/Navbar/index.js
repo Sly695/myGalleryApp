@@ -238,7 +238,6 @@ const Navbar = (props) => {
                 <NavIconContainer>
                         <IconNav onClick={() => reload()}><NavLink to="/gallery"><FontAwesomeIcon icon={faPhotoFilm} /></NavLink></IconNav>
                         <IconNav onClick={() => reload()}><NavLink to="/feed"><FontAwesomeIcon icon={faMagnifyingGlass} /></NavLink></IconNav>
-                        <IconNav onClick={() => reload()}><NavLink to="/message"><FontAwesomeIcon icon={faMessage} /></NavLink></IconNav>
                 </NavIconContainer>
                 <NavMenu style={{ width: `200px` }}>
                     <NavItems>

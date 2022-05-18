@@ -109,6 +109,9 @@ const Feed = () => {
 
     if (displayGrid) {
       return pics.pictures.map(function (pics, i) {
+
+        //Photo du user likés par l'user lui même.
+
         let heart = "";
         var idLiked = likedPictures.find(id => id === pics._id)
         if(idLiked){
@@ -129,7 +132,7 @@ const Feed = () => {
             </div>
             <CardLogo style={{ marginLeft: "15px", marginTop: "7px" }}>
               {heart}
-              <FontAwesomeIcon icon={faComment} style={{ fontSize: "20px" }} />
+              <FontAwesomeIcon icon={faComment} style={{ fontSize: "20px", color: "grey" }} />
             </CardLogo>
             {pics.like} likes
             <PicturesDetails>
