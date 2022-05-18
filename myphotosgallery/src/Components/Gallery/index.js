@@ -58,7 +58,10 @@ const GalleryS = (props) => {
     const [displayLoading, setDisplayLoading] = useState()
     const [avatar, setAvatar] = useState();
     const [displayGrid, setDisplayGrid] = useState(true);
-    const [disabledUpload, setDisabledUpload] = useState(false)
+    const [disabledUpload, setDisabledUpload] = useState(false);
+    const [like, setLike] = useState(false);
+    const [user, setUser] = useState()
+    const [likedPictures, setLikedPictures] = useState([]);
     const { Meta } = Card;
 
     //Const Modal
@@ -84,7 +87,7 @@ const GalleryS = (props) => {
 
         return () => setFile()
 
-    }, [photoAdded, deletePictures, photoUpdate, spinLoader, username]);
+    }, [photoAdded, deletePictures, photoUpdate, spinLoader, username, like]);
 
     //CHOIX DE LA PHOTO
 
@@ -99,6 +102,7 @@ const GalleryS = (props) => {
         let response = await rawResponse.json();
         if (response.result) {
             setAllPictures(response.allPictures[0].pictures);
+            setUser(response.allPictures)
             setDisplayLoading(true);
         }
 
@@ -216,8 +220,24 @@ const GalleryS = (props) => {
         setIsModalVisible(false);
     };
 
+    async function handleLiked(idPicture) {
+        var rawResponse = await fetch(`/likePicture?token=${token}&idPicture=${idPicture}`);
+        setLike(!like)
+    }
+
 
     let pictures = allPictures.map(function (pics, i) {
+
+        // let heart = "";
+        // let idLiked = user[0].picturesLiked.filter(id => id === pics._id.toString());
+        // console.log(idLiked)
+        // idLiked = allPictures.find(id => id.toString() === pics._id)
+        // if (idLiked) {
+        //     heart = <FontAwesomeIcon onClick={() => handleLiked(pics._id)} icon={faHeart} style={{ color: "red", fontSize: "20px", marginRight: "10px", cursor: "pointer" }} />
+
+        // } else {
+        //     heart = <FontAwesomeIcon onClick={() => handleLiked(pics._id)} icon={faHeart} style={{ color: "black", fontSize: "20px", marginRight: "10px", cursor: "pointer" }} />
+        // }
 
         const menu = props => (
             <Menu pics="wow" >
@@ -256,9 +276,9 @@ const GalleryS = (props) => {
                             <FontAwesomeIcon style={{ fontSize: "20px", color: "#01bf71", cursor: "pointer", position: "absolute", top: "425", right: "25" }} icon={faEllipsis} />
                         </Dropdown>
                         <CardLogo style={{ marginLeft: "15px", marginTop: "7px" }}>
-                            <FontAwesomeIcon icon={faHeart} style={{ fontSize: "20px", marginRight: "10px" }} />
                             <FontAwesomeIcon icon={faComment} style={{ fontSize: "20px" }} />
                         </CardLogo>
+                        {pics.like} likes
                         <PicturesDetails>
                             <PicturesUsername style={{ color: "#01bf71" }}>{username}</PicturesUsername>
                             <PicturesDesc>{pics.desc}</PicturesDesc>
@@ -269,15 +289,13 @@ const GalleryS = (props) => {
             )
         } else if (!displayGrid && isMobile) {
 
-
             sizeImage = (
                 <div style={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
-                  <Image style={{ display: "block", width: "120px", height: "120px", objectFit: "cover", margin: "auto", justifyContent: "center" }} src={pics.url} />
+                    <Image style={{ display: "block", width: "120px", height: "120px", objectFit: "cover", margin: "auto", justifyContent: "center" }} src={pics.url} />
                 </div>
             )
 
         } else {
-
 
             sizeImage = (
                 <div>
@@ -296,6 +314,7 @@ const GalleryS = (props) => {
                             <FontAwesomeIcon icon={faHeart} style={{ fontSize: "20px", marginRight: "10px" }} />
                             <FontAwesomeIcon icon={faComment} style={{ fontSize: "20px" }} />
                         </CardLogo>
+                        {pics.like}
                         <PicturesDetails>
                             <PicturesUsername style={{ color: "#01bf71", marginLeft: "25px" }}>{username}</PicturesUsername>
                             <PicturesDesc>{pics.desc}</PicturesDesc>
@@ -401,10 +420,6 @@ const GalleryS = (props) => {
             <FontAwesomeIcon icon={faAlignJustify} />
         )
     }
-
-    console.log(allPictures)
-
-
 
     return (
         <PicturesContainer>

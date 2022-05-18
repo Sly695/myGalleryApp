@@ -37,11 +37,12 @@ router.post('/addPicture', async function (req, res, next) {
     desc: "",
     date: new Date,
     public_path: result.public_id,
+    like: 0,
   });
 
   var userSaved = await user.save();
 
-  
+
 
   if (userSaved) {
     fs.unlinkSync(imagePath);
@@ -54,7 +55,7 @@ router.post('/addPicture', async function (req, res, next) {
 
 router.get('/allUserPictures', async function (req, res, next) {
   let allPictures = await usersModel.find({ token: req.query.token });
-  
+
   if (allPictures) {
     res.json({ allPictures: allPictures, result: true });
   }
@@ -64,7 +65,7 @@ router.get('/allPictures', async function (req, res, next) {
   let allPictures = await usersModel.find();
 
   if (allPictures) {
-    res.json({ allPictures: allPictures })
+    res.json({ allPictures: allPictures})
   }
 })
 
@@ -103,5 +104,89 @@ router.post('/addDescription', async function (req, res, next) {
   }
 })
 
+router.get('/likePicture', async (req, res, next) => {
+
+  let token = req.query.token;
+  let idPicture = req.query.idPicture;
+
+  //L'utilisateur connecté susceptible de liké
+  let user = await usersModel.findOne({ token: token });
+  //Tout les users
+  let allUser = await usersModel.find();
+  
+  //Boucler pour trouver l'ID du propriétaire de la photo liké
+  let userPictureIdFound = "";
+
+  for (let i = 0; i < allUser.length; i++) {
+    for (let j = 0; j < allUser[i].pictures.length; j++) {
+      if (allUser[i].pictures[j]._id.toString() === idPicture) {
+        userPictureIdFound = allUser[i]
+      }
+    }
+  }
+
+
+  //User de la photo liké
+  let userPicture = await usersModel.findOne({ _id: userPictureIdFound })
+  //Photo liké
+  let pictureLiked = userPictureIdFound.pictures.find(pic => pic._id.toString() === idPicture);
+  //Nombre de likes de la photo liké
+  let numberLikes = pictureLiked.like;
+
+  // est-ce l'id est présent dans les photos 
+  const idFound = user.picturesLiked.find(id => id === idPicture)
+
+  //si l'id est pas trouvé
+  if (!idFound) {
+
+    //Ajouter l'id
+    let indexPictureLiked = userPicture.pictures.indexOf(pictureLiked.toString());
+    user.picturesLiked.push(idPicture);
+    numberLikes = numberLikes + 1;
+
+    let userPictureLiked = await usersModel.updateOne(
+      {
+        _id: userPictureIdFound._id
+      },
+      {
+        $set:
+        {
+          [`pictures.${indexPictureLiked}.like`]: numberLikes,
+        }
+      }
+    );
+  } else {
+
+    let indexPictureLiked = userPicture.pictures.indexOf(pictureLiked.toString());
+    //Supprimé l'id de la photo
+    numberLikes = numberLikes - 1;
+    var index = user.picturesLiked.indexOf(idFound);
+    user.picturesLiked.splice(index, 1);
+
+    let userPictureLiked = await usersModel.updateOne(
+      {
+        _id: userPictureIdFound._id
+      },
+      {
+        $set:
+        {
+          [`pictures.${indexPictureLiked}.like`]: numberLikes,
+        }
+      }
+    );
+  }
+
+  var userSaved = await user.save();
+
+  res.json({ result: true, picturesLiked: userSaved.picturesLiked })
+})
+
+router.get('/allPicturesLiked', async (req, res, next) => {
+  var user = await usersModel.findOne({ token: req.query.token });
+
+  if (user) {
+    res.json({ result: true, allPicturesLiked: user.picturesLiked })
+  };
+})
 
 module.exports = router;

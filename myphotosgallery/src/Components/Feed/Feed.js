@@ -35,7 +35,7 @@ import {
   faComment,
   faAlignJustify,
   faGrip,
-  
+
 } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -45,41 +45,53 @@ const Feed = () => {
   const [displayGrid, setDisplayGrid] = useState(true);
   const [spinLoader, setSpinLoader] = useState(false);
   const [like, setLike] = useState(false);
-  
+  const [likedPictures, setLikedPictures] = useState([])
+
 
   const isMobile = useMediaQuery({ query: `(max-width: 888px)` });
   const isNotMobile = useMediaQuery({ query: `(min-width: 889px)` });
 
-  var colorHeart = ""
-  if(like){
-    colorHeart = "red";
-  } else {
-    colorHeart = "black";
-  }
-
-
-  var token = useSelector((state) => state.token)
+  var token = useSelector((state) => state.token);
 
   useEffect(() => {
+
     displayAllPictures();
-  }, [])
+
+  }, [like])
+
+  useEffect(() => {
+    
+    allPicturesLiked();
+
+  }, [like])
 
   async function displayAllPictures() {
     setSpinLoader(true)
     var rawResponse = await fetch('/allPictures');
     var response = await rawResponse.json();
 
-    if(response.result){
+    if (response.result) {
       setSpinLoader(false);
     }
 
     setAllPictures(response.allPictures)
   }
 
-  var allPicturedOtherUser = allPictures.filter(pics => pics.token !== token)
+  async function handleLiked(idPicture){
+    var rawResponse = await fetch(`/likePicture?token=${token}&idPicture=${idPicture}`);
+    setLike(!like)
+  }
 
-  console.log(token)
-  console.log(allPicturedOtherUser)
+  async function allPicturesLiked(){
+    var rawResponse = await fetch(`/allPicturesLiked?token=${token}`);
+    var response = await rawResponse.json();
+
+    if(response.result){
+      setLikedPictures(response.allPicturesLiked)
+    }
+  }
+
+  var allPicturedOtherUser = allPictures.filter(pics => pics.token !== token)
 
   var displayPictures = allPicturedOtherUser.map((pics, i) => {
 
@@ -92,11 +104,21 @@ const Feed = () => {
       avatarDisplay = <Avatar style={{ marginBottom: "10px", border: "1px #E5E9ED solid" }} src={`data:${pics.avatar[0].mimetype};base64,${pics.avatar[0].data}`} icon={<UserOutlined />} />
     }
 
+
     let username = pics.username;
 
     if (displayGrid) {
       return pics.pictures.map(function (pics, i) {
-        return (          
+        let heart = "";
+        var idLiked = likedPictures.find(id => id === pics._id)
+        if(idLiked){
+          heart = <FontAwesomeIcon onClick={() => handleLiked(pics._id)} icon={faHeart} style={{ color: "red", fontSize: "20px", marginRight: "10px", cursor: "pointer" }} />
+
+        } else {
+          heart = <FontAwesomeIcon onClick={() => handleLiked(pics._id)} icon={faHeart} style={{ color: "black", fontSize: "20px", marginRight: "10px", cursor: "pointer" }} />
+        }
+        
+        return (
           <Card style={{ width: "400px", }}>
             <div style={{ display: "flex", flexDirection: "column" }}>
               <div style={{ display: "flex" }}>
@@ -106,23 +128,22 @@ const Feed = () => {
               <Image style={{ display: "block", width: "350px", height: "350px", objectFit: "cover", margin: "auto", justifyContent: "center" }} src={pics.url} />
             </div>
             <CardLogo style={{ marginLeft: "15px", marginTop: "7px" }}>
-              <FontAwesomeIcon onClick={() => setLike(!like)} icon={faHeart} style={{ color: colorHeart, fontSize: "20px", marginRight: "10px",  cursor: "pointer" }} />
+              {heart}
               <FontAwesomeIcon icon={faComment} style={{ fontSize: "20px" }} />
             </CardLogo>
+            {pics.like} likes
             <PicturesDetails>
               <PicturesUsername style={{ color: "#01bf71" }}>{username}</PicturesUsername>
               <PicturesDesc>{pics.desc}</PicturesDesc>
             </PicturesDetails>
-            <PictureDate></PictureDate>
+            <PictureDate>{pics.date}</PictureDate>
           </Card>
         )
       });
     } else if (!displayGrid && isMobile) {
-      return pics.pictures.map(function (pics, i) {
+      return pics.pictures.map(function (pics, i){
         return (
-
-              <Image style={{ display: "block", width: "120px", height: "120px", objectFit: "cover", margin: "auto", justifyContent: "center" }} src={pics.url} />
-
+          <Image style={{ display: "block", width: "120px", height: "120px", objectFit: "cover", margin: "auto", justifyContent: "center" }} src={pics.url} />
         )
       })
 
@@ -133,11 +154,11 @@ const Feed = () => {
             <div style={{ display: "flex", flexDirection: "column" }}>
               <div style={{ display: "flex" }}>
                 {avatarDisplay}
-                <PicturesUsername style={{ color: "#01bf71", marginTop: "7px", marginLeft: "10px" }}>{username}</PicturesUsername>            </div>
+                <PicturesUsername style={{ color: "#01bf71", marginTop: "7px", marginLeft: "10px" }}>{username}</PicturesUsername>
+              </div>
               <Image style={{ display: "block", width: "600px", height: "600px", objectFit: "cover", margin: "auto", justifyContent: "center" }} src={pics.url} />
             </div>
             <CardLogo style={{ marginLeft: "25px", marginTop: "7px", display: "flex", justifyContent: "space-between" }}>
-              <FontAwesomeIcon onClick={() => setLike(!like)} icon={faHeart} style={{ color: colorHeart, fontSize: "20px", marginRight: "10px", cursor: "pointer" }} />
               <FontAwesomeIcon icon={faComment} style={{ fontSize: "20px" }} />
             </CardLogo>
             <PicturesDetails>
@@ -202,20 +223,18 @@ const Feed = () => {
 
   var displayPics = "";
 
-  if(spinLoader){
+  if (spinLoader) {
     displayPics = menuGrid;
   } else {
-    displayPics =  <LoadingOutlined style={{ display: "flex", fontSize: "2rem", margin: "auto", justifyContent: "center"}} />
+    displayPics = <LoadingOutlined style={{ display: "flex", fontSize: "2rem", margin: "auto", justifyContent: "center" }} />
   }
 
   var length = 0;
 
-
-  allPicturedOtherUser.map( (pics, i) => {
+  allPicturedOtherUser.map((pics, i) => {
     length += pics.pictures.length;
-  } )
+  })
 
-  console.log(length)
 
   return (
 
@@ -223,7 +242,7 @@ const Feed = () => {
       <UploadContainer>
         <FeedTitle>Mon fil d'actualité</FeedTitle>
         <FeedInfo>
-          <ButtonStyled>Il y a {length} photos uploadés</ButtonStyled>
+          <ButtonStyled>{length} photos uploadées </ButtonStyled>
           <ButtonStyledBis onClick={() => setDisplayGrid(!displayGrid)}>{iconMenu}</ButtonStyledBis>
         </FeedInfo>
       </UploadContainer>

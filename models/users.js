@@ -4,7 +4,7 @@ var picturesSchema = mongoose.Schema({
   url: String,
   desc: String,
   date: String,
-  like: String,
+  like: Number,
   public_path: String,
 });
 
@@ -17,8 +17,8 @@ var usersSchema = mongoose.Schema({
   date_inscription: Date,
   avatar: Array,
   pictures : [picturesSchema],
+  picturesLiked : Array,
 });
-
 
 var usersModel = mongoose.model("users", usersSchema);
 
